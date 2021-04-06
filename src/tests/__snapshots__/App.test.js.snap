@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Error /> should show correctly 1`] = `
+<WithStyles(ForwardRef(Container))
+  className="App"
+>
+  <h1>
+    EASY ADDRESS
+  </h1>
+  <Form
+    setAsentamientos={[Function]}
+  />
+  <Asentamientos
+    asentamientos={Array []}
+    setSelectedAsentamiento={[Function]}
+  />
+</WithStyles(ForwardRef(Container))>
+`;

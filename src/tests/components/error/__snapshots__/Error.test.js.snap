@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Error /> should show correctly 1`] = `
+<div
+  className="makeStyles-error-1"
+>
+  <h3>
+    Error
+  </h3>
+  <p>
+    Lo sentimos 😢 El código postal no es de México o no es correcto. Intenta con otro 😜
+  </p>
+</div>
+`;

@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Error /> should show correctly 1`] = `
+<Fragment>
+  <p>
+    Ingresa tu código postal
+  </p>
+  <WithStyles(ForwardRef(Card))>
+    <form
+      className="makeStyles-form-1"
+      onSubmit={[Function]}
+    >
+      <WithStyles(ForwardRef(Grid))
+        container={true}
+        spacing={3}
+      >
+        <WithStyles(ForwardRef(Grid))
+          item={true}
+          md={12}
+          xs={12}
+        >
+          <WithStyles(ForwardRef(TextField))
+            className="makeStyles-input-2"
+            disabled={false}
+            label="Cógio postal"
+            name="cp"
+            onChange={[Function]}
+            type="number"
+            value={11000}
+            variant="outlined"
+          />
+        </WithStyles(ForwardRef(Grid))>
+      </WithStyles(ForwardRef(Grid))>
+      <WithStyles(ForwardRef(Button))
+        className="makeStyles-button-3"
+        color="primary"
+        type="submit"
+        variant="contained"
+      >
+        Buscar datos
+      </WithStyles(ForwardRef(Button))>
+    </form>
+  </WithStyles(ForwardRef(Card))>
+</Fragment>
+`;
