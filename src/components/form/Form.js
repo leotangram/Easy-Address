@@ -7,9 +7,7 @@ import useForm from "../../hook/useForm";
 import useStyles from "./FormStyles";
 import Error from "../error/Error";
 
-const COUNTRY = "mx";
-
-const Form = ({ setAsentamientos }) => {
+const Form = ({ country, infobyPostal, setAsentamientos, setInfobyPostal }) => {
   const classes = useStyles();
   const { handleChange, inputs, fetchForm } = useForm({
     cp: 11000,
@@ -19,8 +17,6 @@ const Form = ({ setAsentamientos }) => {
     pais: "",
     tipoAsentamiento: "",
   });
-
-  const [infobyPostal, setInfobyPostal] = useState(false);
   const [error, setError] = useState(false);
   const [succesInfo, setSuccesInfo] = useState(false);
 
@@ -36,7 +32,7 @@ const Form = ({ setAsentamientos }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const { data } = await getInfoByPostal(COUNTRY, cp);
+      const { data } = await getInfoByPostal(country, cp);
       setAsentamientos(data?.response?.asentamiento);
       delete data.response.asentamientos;
       fetchForm(data.response);
@@ -150,7 +146,10 @@ const Form = ({ setAsentamientos }) => {
 };
 
 Form.propTypes = {
+  country: PropTypes.string.isRequired,
+  infobyPostal: PropTypes.bool.isRequired,
   setAsentamientos: PropTypes.func.isRequired,
+  setInfobyPostal: PropTypes.func.isRequired,
 };
 
 export default Form;

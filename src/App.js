@@ -4,6 +4,7 @@ import { Button, Container } from "@material-ui/core";
 import useStyles from "./AppStyles";
 import Form from "./components/form/Form";
 import Asentamientos from "./components/asentamientos/Asentamientos";
+import CountrySelector from "./components/country-selector/CountrySelector";
 
 function App() {
   const classes = useStyles();
@@ -11,19 +12,31 @@ function App() {
   const [asentamientos, setAsentamientos] = useState([]);
   const [selectedAsentamiento, setSelectedAsentamiento] = useState("");
   const [infoConfirmed, setInfoConfirmed] = useState(false);
+  const [country, setCountry] = useState("");
+  const [infobyPostal, setInfobyPostal] = useState(false);
 
   const resetInfo = () => {
     setInfoConfirmed(false);
     setSelectedAsentamiento("");
     setAsentamientos([]);
+    setInfobyPostal(false);
+    setCountry("");
   };
 
   return (
     <Container className="App">
       <h1>EASY ADDRESS</h1>
-      {!infoConfirmed && (
+      {!infobyPostal && (
+        <CountrySelector country={country} setCountry={setCountry} />
+      )}
+      {!infoConfirmed && country && (
         <>
-          <Form setAsentamientos={setAsentamientos} />
+          <Form
+            country={country}
+            infobyPostal={infobyPostal}
+            setAsentamientos={setAsentamientos}
+            setInfobyPostal={setInfobyPostal}
+          />
           {asentamientos && (
             <Asentamientos
               asentamientos={asentamientos}
